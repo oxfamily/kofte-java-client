@@ -2,7 +2,7 @@
 
 Köfte
 - API version: 0.1
-  - Build date: 2024-11-11T17:51:23.317301074+01:00[Europe/Brussels]
+  - Build date: 2024-11-11T18:01:31.263878173+01:00[Europe/Brussels]
   - Generator version: 7.9.0
 
 Köfte Api V1
@@ -136,8 +136,13 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Context](docs/Context.md)
+ - [DownloadFileRequestUriParams](docs/DownloadFileRequestUriParams.md)
+ - [FileUpload](docs/FileUpload.md)
  - [RenderRequest](docs/RenderRequest.md)
+ - [Template](docs/Template.md)
  - [TemplateType](docs/TemplateType.md)
+ - [TemplateUpsert](docs/TemplateUpsert.md)
+ - [UploadFileRequestUriParams](docs/UploadFileRequestUriParams.md)
 
 
 <a id="documentation-for-authorization"></a>

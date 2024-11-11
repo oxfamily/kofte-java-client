@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * RenderRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-11T17:51:23.317301074+01:00[Europe/Brussels]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-11T18:01:31.263878173+01:00[Europe/Brussels]", comments = "Generator version: 7.9.0")
 public class RenderRequest {
   public static final String SERIALIZED_NAME_CONTEXT = "context";
   @SerializedName(SERIALIZED_NAME_CONTEXT)

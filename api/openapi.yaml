@@ -308,6 +308,52 @@ components:
       enum:
       - INVOICE
       type: string
+    DownloadFileRequestUriParams:
+      properties:
+        id:
+          type: string
+      required:
+      - id
+    FileUpload:
+      properties:
+        _id:
+          type: string
+        contentType:
+          nullable: true
+          type: string
+        correlationId:
+          nullable: true
+          type: string
+        creationDate:
+          format: date-time
+          type: string
+        extension:
+          nullable: true
+          type: string
+        internalName:
+          type: string
+        originalFilename:
+          type: string
+        publicResource:
+          type: boolean
+        size:
+          format: int64
+          minimum: 0
+          type: integer
+        thumbnailId:
+          nullable: true
+          type: string
+        updatedDate:
+          format: date-time
+          nullable: true
+          type: string
+      required:
+      - _id
+      - creationDate
+      - internalName
+      - originalFilename
+      - publicResource
+      - size
     RenderRequest:
       example:
         fileName: fileName
@@ -327,10 +373,68 @@ components:
       - fileName
       - templateContext
       - templateId
+    Template:
+      properties:
+        _id:
+          type: string
+        creationDate:
+          format: date-time
+          type: string
+        description:
+          nullable: true
+          type: string
+        fileId:
+          type: string
+        templateContext:
+          $ref: '#/components/schemas/Context'
+        templateType:
+          $ref: '#/components/schemas/TemplateType'
+        title:
+          type: string
+        updatedDate:
+          format: date-time
+          nullable: true
+          type: string
+      required:
+      - _id
+      - creationDate
+      - fileId
+      - templateContext
+      - templateType
+      - title
     TemplateType:
       enum:
       - HTML
       type: string
+    TemplateUpsert:
+      properties:
+        _id:
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+        templateContext:
+          $ref: '#/components/schemas/Context'
+        templateType:
+          $ref: '#/components/schemas/TemplateType'
+        title:
+          type: string
+      required:
+      - templateContext
+      - templateType
+      - title
+    UploadFileRequestUriParams:
+      properties:
+        correlation_id:
+          nullable: true
+          type: string
+        id:
+          nullable: true
+          type: string
+        is_public:
+          nullable: true
+          type: boolean
     upsert_request:
       properties:
         file_bytes:
