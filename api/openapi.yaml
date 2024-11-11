@@ -1,0 +1,345 @@
+openapi: 3.1.0
+info:
+  description: Köfte Api V1
+  license:
+    name: ""
+  title: Köfte
+  version: "0.1"
+servers:
+- url: /
+paths:
+  /api/v1/template:
+    post:
+      operationId: upsert
+      parameters:
+      - explode: true
+        in: query
+        name: _id
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: title
+        required: true
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: description
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: templateType
+        required: true
+        schema:
+          $ref: '#/components/schemas/TemplateType'
+        style: form
+      - explode: true
+        in: query
+        name: templateContext
+        required: true
+        schema:
+          $ref: '#/components/schemas/Context'
+        style: form
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/upsert_request'
+        required: true
+      responses:
+        "200":
+          description: Upsert a template
+      security:
+      - bearerAuth: []
+      tags:
+      - template::routes
+      x-content-type: multipart/form-data
+      x-accepts:
+      - application/json
+  /api/v1/template/find-all:
+    get:
+      operationId: find_all
+      responses:
+        "200":
+          description: Find all templates
+      security:
+      - bearerAuth: []
+      tags:
+      - template::routes
+      x-accepts:
+      - application/json
+  /api/v1/template/find-by-context:
+    get:
+      operationId: find_by_context
+      parameters:
+      - explode: true
+        in: query
+        name: context
+        required: true
+        schema:
+          $ref: '#/components/schemas/Context'
+        style: form
+      responses:
+        "200":
+          description: Find templates by context
+      security:
+      - bearerAuth: []
+      tags:
+      - template::routes
+      x-accepts:
+      - application/json
+  /api/v1/template/find-by-ids:
+    get:
+      operationId: find_by_ids
+      parameters:
+      - explode: true
+        in: query
+        name: ids
+        required: true
+        schema:
+          items:
+            type: string
+          type: array
+        style: form
+      responses:
+        "200":
+          description: Find By ids
+      security:
+      - bearerAuth: []
+      tags:
+      - template::routes
+      x-accepts:
+      - application/json
+  /api/v1/template/find-by-type:
+    get:
+      operationId: find_by_type
+      parameters:
+      - explode: true
+        in: query
+        name: template_type
+        required: true
+        schema:
+          $ref: '#/components/schemas/TemplateType'
+        style: form
+      responses:
+        "200":
+          description: Find templates by type
+      security:
+      - bearerAuth: []
+      tags:
+      - template::routes
+      x-accepts:
+      - application/json
+  /api/v1/template/find-one/{templ_id}:
+    get:
+      operationId: find_one
+      parameters:
+      - explode: false
+        in: path
+        name: templ_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Find a template by id
+      security:
+      - bearerAuth: []
+      tags:
+      - template::routes
+      x-accepts:
+      - application/json
+  /api/v1/template/render:
+    post:
+      operationId: render
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RenderRequest'
+        required: true
+      responses:
+        "200":
+          description: Render template
+      security:
+      - bearerAuth: []
+      tags:
+      - template::routes
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /api/v1/template/{id}:
+    delete:
+      operationId: delete_templ_by_id
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: Delete a template by id
+      security:
+      - bearerAuth: []
+      tags:
+      - template::routes
+      x-accepts:
+      - application/json
+  /api/v1/upload:
+    post:
+      operationId: upload
+      parameters:
+      - explode: true
+        in: query
+        name: correlation_id
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: id
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: is_public
+        required: false
+        schema:
+          nullable: true
+          type: boolean
+        style: form
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/upsert_request'
+        required: true
+      responses:
+        "200":
+          description: Upload a file
+      security:
+      - bearerAuth: []
+      tags:
+      - upload::routes
+      x-content-type: multipart/form-data
+      x-accepts:
+      - application/json
+  /api/v1/upload/download:
+    get:
+      operationId: download
+      parameters:
+      - explode: true
+        in: query
+        name: id
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          description: Download file
+      security:
+      - bearerAuth: []
+      tags:
+      - upload::routes
+      x-accepts:
+      - application/json
+  /api/v1/upload/metadata:
+    get:
+      operationId: metadata
+      parameters:
+      - explode: true
+        in: query
+        name: id
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          description: Get upload metadata
+      security:
+      - bearerAuth: []
+      tags:
+      - upload::routes
+      x-accepts:
+      - application/json
+  /api/v1/upload/{id}:
+    delete:
+      operationId: delete_by_id
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Delete a file by id
+      security:
+      - bearerAuth: []
+      tags:
+      - upload::routes
+      x-accepts:
+      - application/json
+components:
+  schemas:
+    Context:
+      enum:
+      - INVOICE
+      type: string
+    RenderRequest:
+      example:
+        fileName: fileName
+        templateContext: INVOICE
+        context: ""
+        templateId: templateId
+      properties:
+        context: {}
+        fileName:
+          type: string
+        templateContext:
+          $ref: '#/components/schemas/Context'
+        templateId:
+          type: string
+      required:
+      - context
+      - fileName
+      - templateContext
+      - templateId
+    TemplateType:
+      enum:
+      - HTML
+      type: string
+    upsert_request:
+      properties:
+        file_bytes:
+          format: binary
+          type: string
+      required:
+      - file_bytes
+  securitySchemes:
+    bearerAuth:
+      scheme: bearer
+      type: http
+
