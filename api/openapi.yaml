@@ -302,7 +302,7 @@ paths:
           content:
             application/octet-stream:
               schema:
-                $ref: '#/components/schemas/upsert_request'
+                $ref: '#/components/schemas/OpenApiBinaryResponse'
           description: Download file
       security:
       - bearerAuth: []

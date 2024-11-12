@@ -76,7 +76,7 @@ null (empty response body)
 
 <a id="download"></a>
 # **download**
-> UpsertRequest download(id)
+> OpenApiBinaryResponse download(id)
 
 
 
@@ -102,7 +102,7 @@ public class Example {
     UploadroutesApi apiInstance = new UploadroutesApi(defaultClient);
     String id = "id_example"; // String | 
     try {
-      UpsertRequest result = apiInstance.download(id);
+      OpenApiBinaryResponse result = apiInstance.download(id);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UploadroutesApi#download");
@@ -123,7 +123,7 @@ public class Example {
 
 ### Return type
 
-[**UpsertRequest**](UpsertRequest.md)
+[**OpenApiBinaryResponse**](OpenApiBinaryResponse.md)
 
 ### Authorization
 
