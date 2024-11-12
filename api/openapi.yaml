@@ -4,7 +4,7 @@ info:
   license:
     name: ""
   title: Köfte
-  version: "0.1"
+  version: "0.2"
 servers:
 - url: /
 paths:
@@ -57,6 +57,10 @@ paths:
         required: true
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Template'
           description: Upsert a template
       security:
       - bearerAuth: []
@@ -70,6 +74,12 @@ paths:
       operationId: find_all
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Template'
+                type: array
           description: Find all templates
       security:
       - bearerAuth: []
@@ -90,6 +100,12 @@ paths:
         style: form
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Template'
+                type: array
           description: Find templates by context
       security:
       - bearerAuth: []
@@ -112,6 +128,12 @@ paths:
         style: form
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Template'
+                type: array
           description: Find By ids
       security:
       - bearerAuth: []
@@ -132,6 +154,12 @@ paths:
         style: form
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Template'
+                type: array
           description: Find templates by type
       security:
       - bearerAuth: []
@@ -152,6 +180,10 @@ paths:
         style: simple
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Template'
           description: Find a template by id
       security:
       - bearerAuth: []
@@ -170,6 +202,14 @@ paths:
         required: true
       responses:
         "200":
+          content:
+            application/octet-stream:
+              schema:
+                items:
+                  format: int32
+                  minimum: 0
+                  type: integer
+                type: array
           description: Render template
       security:
       - bearerAuth: []
@@ -177,7 +217,7 @@ paths:
       - template::routes
       x-content-type: application/json
       x-accepts:
-      - application/json
+      - application/octet-stream
   /api/v1/template/{id}:
     delete:
       operationId: delete_templ_by_id
@@ -190,7 +230,7 @@ paths:
           type: string
         style: simple
       responses:
-        "204":
+        "200":
           description: Delete a template by id
       security:
       - bearerAuth: []
@@ -234,6 +274,10 @@ paths:
         required: true
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileUpload'
           description: Upload a file
       security:
       - bearerAuth: []
@@ -255,13 +299,21 @@ paths:
         style: form
       responses:
         "200":
+          content:
+            application/octet-stream:
+              schema:
+                items:
+                  format: int32
+                  minimum: 0
+                  type: integer
+                type: array
           description: Download file
       security:
       - bearerAuth: []
       tags:
       - upload::routes
       x-accepts:
-      - application/json
+      - application/octet-stream
   /api/v1/upload/metadata:
     get:
       operationId: metadata
@@ -275,6 +327,10 @@ paths:
         style: form
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileUpload'
           description: Get upload metadata
       security:
       - bearerAuth: []
@@ -315,6 +371,18 @@ components:
       required:
       - id
     FileUpload:
+      example:
+        internalName: internalName
+        extension: extension
+        publicResource: true
+        size: 0
+        correlationId: correlationId
+        thumbnailId: thumbnailId
+        _id: _id
+        updatedDate: 2000-01-23T04:56:07.000+00:00
+        creationDate: 2000-01-23T04:56:07.000+00:00
+        contentType: contentType
+        originalFilename: originalFilename
       properties:
         _id:
           type: string
@@ -374,6 +442,15 @@ components:
       - templateContext
       - templateId
     Template:
+      example:
+        templateType: HTML
+        templateContext: INVOICE
+        description: description
+        _id: _id
+        updatedDate: 2000-01-23T04:56:07.000+00:00
+        creationDate: 2000-01-23T04:56:07.000+00:00
+        title: title
+        fileId: fileId
       properties:
         _id:
           type: string

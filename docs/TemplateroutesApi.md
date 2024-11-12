@@ -76,11 +76,11 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Delete a template by id |  -  |
+| **200** | Delete a template by id |  -  |
 
 <a id="findAll"></a>
 # **findAll**
-> findAll()
+> List&lt;Template&gt; findAll()
 
 
 
@@ -105,7 +105,8 @@ public class Example {
 
     TemplateroutesApi apiInstance = new TemplateroutesApi(defaultClient);
     try {
-      apiInstance.findAll();
+      List<Template> result = apiInstance.findAll();
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TemplateroutesApi#findAll");
       System.err.println("Status code: " + e.getCode());
@@ -122,7 +123,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+[**List&lt;Template&gt;**](Template.md)
 
 ### Authorization
 
@@ -131,7 +132,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -140,7 +141,7 @@ null (empty response body)
 
 <a id="findByContext"></a>
 # **findByContext**
-> findByContext(context)
+> List&lt;Template&gt; findByContext(context)
 
 
 
@@ -166,7 +167,8 @@ public class Example {
     TemplateroutesApi apiInstance = new TemplateroutesApi(defaultClient);
     Context context = Context.fromValue("INVOICE"); // Context | 
     try {
-      apiInstance.findByContext(context);
+      List<Template> result = apiInstance.findByContext(context);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TemplateroutesApi#findByContext");
       System.err.println("Status code: " + e.getCode());
@@ -186,7 +188,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+[**List&lt;Template&gt;**](Template.md)
 
 ### Authorization
 
@@ -195,7 +197,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -204,7 +206,7 @@ null (empty response body)
 
 <a id="findByIds"></a>
 # **findByIds**
-> findByIds(ids)
+> List&lt;Template&gt; findByIds(ids)
 
 
 
@@ -230,7 +232,8 @@ public class Example {
     TemplateroutesApi apiInstance = new TemplateroutesApi(defaultClient);
     List<String> ids = Arrays.asList(); // List<String> | 
     try {
-      apiInstance.findByIds(ids);
+      List<Template> result = apiInstance.findByIds(ids);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TemplateroutesApi#findByIds");
       System.err.println("Status code: " + e.getCode());
@@ -250,7 +253,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+[**List&lt;Template&gt;**](Template.md)
 
 ### Authorization
 
@@ -259,7 +262,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -268,7 +271,7 @@ null (empty response body)
 
 <a id="findByType"></a>
 # **findByType**
-> findByType(templateType)
+> List&lt;Template&gt; findByType(templateType)
 
 
 
@@ -294,7 +297,8 @@ public class Example {
     TemplateroutesApi apiInstance = new TemplateroutesApi(defaultClient);
     TemplateType templateType = TemplateType.fromValue("HTML"); // TemplateType | 
     try {
-      apiInstance.findByType(templateType);
+      List<Template> result = apiInstance.findByType(templateType);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TemplateroutesApi#findByType");
       System.err.println("Status code: " + e.getCode());
@@ -314,7 +318,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+[**List&lt;Template&gt;**](Template.md)
 
 ### Authorization
 
@@ -323,7 +327,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -332,7 +336,7 @@ null (empty response body)
 
 <a id="findOne"></a>
 # **findOne**
-> findOne(templId)
+> Template findOne(templId)
 
 
 
@@ -358,7 +362,8 @@ public class Example {
     TemplateroutesApi apiInstance = new TemplateroutesApi(defaultClient);
     String templId = "templId_example"; // String | 
     try {
-      apiInstance.findOne(templId);
+      Template result = apiInstance.findOne(templId);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TemplateroutesApi#findOne");
       System.err.println("Status code: " + e.getCode());
@@ -378,7 +383,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+[**Template**](Template.md)
 
 ### Authorization
 
@@ -387,7 +392,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -396,7 +401,7 @@ null (empty response body)
 
 <a id="render"></a>
 # **render**
-> render(renderRequest)
+> List&lt;Integer&gt; render(renderRequest)
 
 
 
@@ -422,7 +427,8 @@ public class Example {
     TemplateroutesApi apiInstance = new TemplateroutesApi(defaultClient);
     RenderRequest renderRequest = new RenderRequest(); // RenderRequest | 
     try {
-      apiInstance.render(renderRequest);
+      List<Integer> result = apiInstance.render(renderRequest);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TemplateroutesApi#render");
       System.err.println("Status code: " + e.getCode());
@@ -442,7 +448,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+**List&lt;Integer&gt;**
 
 ### Authorization
 
@@ -451,7 +457,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -460,7 +466,7 @@ null (empty response body)
 
 <a id="upsert"></a>
 # **upsert**
-> upsert(title, templateType, templateContext, fileBytes, id, description)
+> Template upsert(title, templateType, templateContext, fileBytes, id, description)
 
 
 
@@ -491,7 +497,8 @@ public class Example {
     String id = "id_example"; // String | 
     String description = "description_example"; // String | 
     try {
-      apiInstance.upsert(title, templateType, templateContext, fileBytes, id, description);
+      Template result = apiInstance.upsert(title, templateType, templateContext, fileBytes, id, description);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TemplateroutesApi#upsert");
       System.err.println("Status code: " + e.getCode());
@@ -516,7 +523,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+[**Template**](Template.md)
 
 ### Authorization
 
@@ -525,7 +532,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

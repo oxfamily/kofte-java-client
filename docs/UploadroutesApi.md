@@ -76,7 +76,7 @@ null (empty response body)
 
 <a id="download"></a>
 # **download**
-> download(id)
+> List&lt;Integer&gt; download(id)
 
 
 
@@ -102,7 +102,8 @@ public class Example {
     UploadroutesApi apiInstance = new UploadroutesApi(defaultClient);
     String id = "id_example"; // String | 
     try {
-      apiInstance.download(id);
+      List<Integer> result = apiInstance.download(id);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UploadroutesApi#download");
       System.err.println("Status code: " + e.getCode());
@@ -122,7 +123,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+**List&lt;Integer&gt;**
 
 ### Authorization
 
@@ -131,7 +132,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -140,7 +141,7 @@ null (empty response body)
 
 <a id="metadata"></a>
 # **metadata**
-> metadata(id)
+> FileUpload metadata(id)
 
 
 
@@ -166,7 +167,8 @@ public class Example {
     UploadroutesApi apiInstance = new UploadroutesApi(defaultClient);
     String id = "id_example"; // String | 
     try {
-      apiInstance.metadata(id);
+      FileUpload result = apiInstance.metadata(id);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UploadroutesApi#metadata");
       System.err.println("Status code: " + e.getCode());
@@ -186,7 +188,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+[**FileUpload**](FileUpload.md)
 
 ### Authorization
 
@@ -195,7 +197,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -204,7 +206,7 @@ null (empty response body)
 
 <a id="upload"></a>
 # **upload**
-> upload(fileBytes, correlationId, id, isPublic)
+> FileUpload upload(fileBytes, correlationId, id, isPublic)
 
 
 
@@ -233,7 +235,8 @@ public class Example {
     String id = "id_example"; // String | 
     Boolean isPublic = true; // Boolean | 
     try {
-      apiInstance.upload(fileBytes, correlationId, id, isPublic);
+      FileUpload result = apiInstance.upload(fileBytes, correlationId, id, isPublic);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UploadroutesApi#upload");
       System.err.println("Status code: " + e.getCode());
@@ -256,7 +259,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+[**FileUpload**](FileUpload.md)
 
 ### Authorization
 
@@ -265,7 +268,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
