@@ -302,11 +302,7 @@ paths:
           content:
             application/octet-stream:
               schema:
-                items:
-                  format: int32
-                  minimum: 0
-                  type: integer
-                type: array
+                $ref: '#/components/schemas/BinaryFileResponse'
           description: Download file
       security:
       - bearerAuth: []
@@ -360,6 +356,12 @@ paths:
       - application/json
 components:
   schemas:
+    BinaryFileResponse:
+      items:
+        format: int32
+        minimum: 0
+        type: integer
+      type: array
     Context:
       enum:
       - INVOICE
