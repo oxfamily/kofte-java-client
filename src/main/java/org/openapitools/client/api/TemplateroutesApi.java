@@ -32,6 +32,7 @@ import java.io.File;
 import org.openapitools.client.model.RenderRequest;
 import org.openapitools.client.model.Template;
 import org.openapitools.client.model.TemplateType;
+import org.openapitools.client.model.UpsertRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -880,7 +881,7 @@ public class TemplateroutesApi {
      * 
      * 
      * @param renderRequest  (required)
-     * @return List&lt;Integer&gt;
+     * @return UpsertRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -888,8 +889,8 @@ public class TemplateroutesApi {
         <tr><td> 200 </td><td> Render template </td><td>  -  </td></tr>
      </table>
      */
-    public List<Integer> render(RenderRequest renderRequest) throws ApiException {
-        ApiResponse<List<Integer>> localVarResp = renderWithHttpInfo(renderRequest);
+    public UpsertRequest render(RenderRequest renderRequest) throws ApiException {
+        ApiResponse<UpsertRequest> localVarResp = renderWithHttpInfo(renderRequest);
         return localVarResp.getData();
     }
 
@@ -897,7 +898,7 @@ public class TemplateroutesApi {
      * 
      * 
      * @param renderRequest  (required)
-     * @return ApiResponse&lt;List&lt;Integer&gt;&gt;
+     * @return ApiResponse&lt;UpsertRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -905,9 +906,9 @@ public class TemplateroutesApi {
         <tr><td> 200 </td><td> Render template </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Integer>> renderWithHttpInfo(RenderRequest renderRequest) throws ApiException {
+    public ApiResponse<UpsertRequest> renderWithHttpInfo(RenderRequest renderRequest) throws ApiException {
         okhttp3.Call localVarCall = renderValidateBeforeCall(renderRequest, null);
-        Type localVarReturnType = new TypeToken<List<Integer>>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpsertRequest>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -924,10 +925,10 @@ public class TemplateroutesApi {
         <tr><td> 200 </td><td> Render template </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call renderAsync(RenderRequest renderRequest, final ApiCallback<List<Integer>> _callback) throws ApiException {
+    public okhttp3.Call renderAsync(RenderRequest renderRequest, final ApiCallback<UpsertRequest> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = renderValidateBeforeCall(renderRequest, _callback);
-        Type localVarReturnType = new TypeToken<List<Integer>>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpsertRequest>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

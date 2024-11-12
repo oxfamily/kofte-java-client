@@ -16,6 +16,7 @@ docs/TemplateUpsert.md
 docs/TemplateroutesApi.md
 docs/UploadFileRequestUriParams.md
 docs/UploadroutesApi.md
+docs/UpsertRequest.md
 git_push.sh
 gradle.properties
 gradle/wrapper/gradle-wrapper.jar
@@ -54,3 +55,4 @@ src/main/java/org/openapitools/client/model/Template.java
 src/main/java/org/openapitools/client/model/TemplateType.java
 src/main/java/org/openapitools/client/model/TemplateUpsert.java
 src/main/java/org/openapitools/client/model/UploadFileRequestUriParams.java
+src/main/java/org/openapitools/client/model/UpsertRequest.java

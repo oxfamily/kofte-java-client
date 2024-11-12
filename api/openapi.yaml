@@ -205,11 +205,7 @@ paths:
           content:
             application/octet-stream:
               schema:
-                items:
-                  format: int32
-                  minimum: 0
-                  type: integer
-                type: array
+                $ref: '#/components/schemas/upsert_request'
           description: Render template
       security:
       - bearerAuth: []
@@ -302,7 +298,7 @@ paths:
           content:
             application/octet-stream:
               schema:
-                $ref: '#/components/schemas/OpenApiBinaryResponse'
+                $ref: '#/components/schemas/upsert_request'
           description: Download file
       security:
       - bearerAuth: []
