@@ -300,16 +300,16 @@ paths:
       responses:
         "200":
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                $ref: '#/components/schemas/BinaryFileResponse'
+                $ref: '#/components/schemas/upsert_request'
           description: Download file
       security:
       - bearerAuth: []
       tags:
       - upload::routes
       x-accepts:
-      - application/octet-stream
+      - application/json
   /api/v1/upload/metadata:
     get:
       operationId: metadata
@@ -356,12 +356,6 @@ paths:
       - application/json
 components:
   schemas:
-    BinaryFileResponse:
-      items:
-        format: int32
-        minimum: 0
-        type: integer
-      type: array
     Context:
       enum:
       - INVOICE
@@ -515,6 +509,8 @@ components:
           nullable: true
           type: boolean
     upsert_request:
+      example:
+        file_bytes: ""
       properties:
         file_bytes:
           format: binary

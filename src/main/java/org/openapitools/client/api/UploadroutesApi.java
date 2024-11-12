@@ -29,6 +29,7 @@ import java.io.IOException;
 
 import java.io.File;
 import org.openapitools.client.model.FileUpload;
+import org.openapitools.client.model.UpsertRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -233,7 +234,7 @@ public class UploadroutesApi {
         }
 
         final String[] localVarAccepts = {
-            "application/octet-stream"
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -266,7 +267,7 @@ public class UploadroutesApi {
      * 
      * 
      * @param id  (required)
-     * @return List&lt;Integer&gt;
+     * @return UpsertRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -274,8 +275,8 @@ public class UploadroutesApi {
         <tr><td> 200 </td><td> Download file </td><td>  -  </td></tr>
      </table>
      */
-    public List<Integer> download(String id) throws ApiException {
-        ApiResponse<List<Integer>> localVarResp = downloadWithHttpInfo(id);
+    public UpsertRequest download(String id) throws ApiException {
+        ApiResponse<UpsertRequest> localVarResp = downloadWithHttpInfo(id);
         return localVarResp.getData();
     }
 
@@ -283,7 +284,7 @@ public class UploadroutesApi {
      * 
      * 
      * @param id  (required)
-     * @return ApiResponse&lt;List&lt;Integer&gt;&gt;
+     * @return ApiResponse&lt;UpsertRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -291,9 +292,9 @@ public class UploadroutesApi {
         <tr><td> 200 </td><td> Download file </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Integer>> downloadWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<UpsertRequest> downloadWithHttpInfo(String id) throws ApiException {
         okhttp3.Call localVarCall = downloadValidateBeforeCall(id, null);
-        Type localVarReturnType = new TypeToken<List<Integer>>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpsertRequest>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -310,10 +311,10 @@ public class UploadroutesApi {
         <tr><td> 200 </td><td> Download file </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadAsync(String id, final ApiCallback<List<Integer>> _callback) throws ApiException {
+    public okhttp3.Call downloadAsync(String id, final ApiCallback<UpsertRequest> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadValidateBeforeCall(id, _callback);
-        Type localVarReturnType = new TypeToken<List<Integer>>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpsertRequest>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

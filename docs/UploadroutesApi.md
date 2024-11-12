@@ -76,7 +76,7 @@ null (empty response body)
 
 <a id="download"></a>
 # **download**
-> List&lt;Integer&gt; download(id)
+> UpsertRequest download(id)
 
 
 
@@ -102,7 +102,7 @@ public class Example {
     UploadroutesApi apiInstance = new UploadroutesApi(defaultClient);
     String id = "id_example"; // String | 
     try {
-      List<Integer> result = apiInstance.download(id);
+      UpsertRequest result = apiInstance.download(id);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UploadroutesApi#download");
@@ -123,7 +123,7 @@ public class Example {
 
 ### Return type
 
-**List&lt;Integer&gt;**
+[**UpsertRequest**](UpsertRequest.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ public class Example {
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
