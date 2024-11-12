@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * DownloadFileRequestUriParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-12T13:17:01.213151124+01:00[Europe/Brussels]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-12T13:18:35.820933602+01:00[Europe/Brussels]", comments = "Generator version: 7.9.0")
 public class DownloadFileRequestUriParams {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

@@ -29,10 +29,10 @@ import java.io.IOException;
 
 import org.openapitools.client.model.Context;
 import java.io.File;
+import org.openapitools.client.model.OpenApiBinaryResponse;
 import org.openapitools.client.model.RenderRequest;
 import org.openapitools.client.model.Template;
 import org.openapitools.client.model.TemplateType;
-import org.openapitools.client.model.UpsertRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -881,7 +881,7 @@ public class TemplateroutesApi {
      * 
      * 
      * @param renderRequest  (required)
-     * @return UpsertRequest
+     * @return OpenApiBinaryResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -889,8 +889,8 @@ public class TemplateroutesApi {
         <tr><td> 200 </td><td> Render template </td><td>  -  </td></tr>
      </table>
      */
-    public UpsertRequest render(RenderRequest renderRequest) throws ApiException {
-        ApiResponse<UpsertRequest> localVarResp = renderWithHttpInfo(renderRequest);
+    public OpenApiBinaryResponse render(RenderRequest renderRequest) throws ApiException {
+        ApiResponse<OpenApiBinaryResponse> localVarResp = renderWithHttpInfo(renderRequest);
         return localVarResp.getData();
     }
 
@@ -898,7 +898,7 @@ public class TemplateroutesApi {
      * 
      * 
      * @param renderRequest  (required)
-     * @return ApiResponse&lt;UpsertRequest&gt;
+     * @return ApiResponse&lt;OpenApiBinaryResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -906,9 +906,9 @@ public class TemplateroutesApi {
         <tr><td> 200 </td><td> Render template </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UpsertRequest> renderWithHttpInfo(RenderRequest renderRequest) throws ApiException {
+    public ApiResponse<OpenApiBinaryResponse> renderWithHttpInfo(RenderRequest renderRequest) throws ApiException {
         okhttp3.Call localVarCall = renderValidateBeforeCall(renderRequest, null);
-        Type localVarReturnType = new TypeToken<UpsertRequest>(){}.getType();
+        Type localVarReturnType = new TypeToken<OpenApiBinaryResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -925,10 +925,10 @@ public class TemplateroutesApi {
         <tr><td> 200 </td><td> Render template </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call renderAsync(RenderRequest renderRequest, final ApiCallback<UpsertRequest> _callback) throws ApiException {
+    public okhttp3.Call renderAsync(RenderRequest renderRequest, final ApiCallback<OpenApiBinaryResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = renderValidateBeforeCall(renderRequest, _callback);
-        Type localVarReturnType = new TypeToken<UpsertRequest>(){}.getType();
+        Type localVarReturnType = new TypeToken<OpenApiBinaryResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

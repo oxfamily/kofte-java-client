@@ -401,7 +401,7 @@ public class Example {
 
 <a id="render"></a>
 # **render**
-> UpsertRequest render(renderRequest)
+> OpenApiBinaryResponse render(renderRequest)
 
 
 
@@ -427,7 +427,7 @@ public class Example {
     TemplateroutesApi apiInstance = new TemplateroutesApi(defaultClient);
     RenderRequest renderRequest = new RenderRequest(); // RenderRequest | 
     try {
-      UpsertRequest result = apiInstance.render(renderRequest);
+      OpenApiBinaryResponse result = apiInstance.render(renderRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TemplateroutesApi#render");
@@ -448,7 +448,7 @@ public class Example {
 
 ### Return type
 
-[**UpsertRequest**](UpsertRequest.md)
+[**OpenApiBinaryResponse**](OpenApiBinaryResponse.md)
 
 ### Authorization
 
