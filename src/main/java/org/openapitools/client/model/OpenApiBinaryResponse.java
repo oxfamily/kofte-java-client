@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -46,33 +47,33 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * DownloadFileRequestUriParams
+ * OpenApiBinaryResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-12T13:09:32.964459314+01:00[Europe/Brussels]", comments = "Generator version: 7.9.0")
-public class DownloadFileRequestUriParams {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  private String id;
+public class OpenApiBinaryResponse {
+  public static final String SERIALIZED_NAME_FILE_BYTES = "file_bytes";
+  @SerializedName(SERIALIZED_NAME_FILE_BYTES)
+  private File fileBytes;
 
-  public DownloadFileRequestUriParams() {
+  public OpenApiBinaryResponse() {
   }
 
-  public DownloadFileRequestUriParams id(String id) {
-    this.id = id;
+  public OpenApiBinaryResponse fileBytes(File fileBytes) {
+    this.fileBytes = fileBytes;
     return this;
   }
 
   /**
-   * Get id
-   * @return id
+   * Get fileBytes
+   * @return fileBytes
    */
   @javax.annotation.Nonnull
-  public String getId() {
-    return id;
+  public File getFileBytes() {
+    return fileBytes;
   }
 
-  public void setId(String id) {
-    this.id = id;
+  public void setFileBytes(File fileBytes) {
+    this.fileBytes = fileBytes;
   }
 
 
@@ -85,20 +86,20 @@ public class DownloadFileRequestUriParams {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DownloadFileRequestUriParams downloadFileRequestUriParams = (DownloadFileRequestUriParams) o;
-    return Objects.equals(this.id, downloadFileRequestUriParams.id);
+    OpenApiBinaryResponse openApiBinaryResponse = (OpenApiBinaryResponse) o;
+    return Objects.equals(this.fileBytes, openApiBinaryResponse.fileBytes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(fileBytes);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DownloadFileRequestUriParams {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("class OpenApiBinaryResponse {\n");
+    sb.append("    fileBytes: ").append(toIndentedString(fileBytes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -121,66 +122,63 @@ public class DownloadFileRequestUriParams {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("id");
+    openapiFields.add("file_bytes");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
+    openapiRequiredFields.add("file_bytes");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DownloadFileRequestUriParams
+   * @throws IOException if the JSON Element is invalid with respect to OpenApiBinaryResponse
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!DownloadFileRequestUriParams.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DownloadFileRequestUriParams is not found in the empty JSON string", DownloadFileRequestUriParams.openapiRequiredFields.toString()));
+        if (!OpenApiBinaryResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in OpenApiBinaryResponse is not found in the empty JSON string", OpenApiBinaryResponse.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!DownloadFileRequestUriParams.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DownloadFileRequestUriParams` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!OpenApiBinaryResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OpenApiBinaryResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : DownloadFileRequestUriParams.openapiRequiredFields) {
+      for (String requiredField : OpenApiBinaryResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!DownloadFileRequestUriParams.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'DownloadFileRequestUriParams' and its subtypes
+       if (!OpenApiBinaryResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'OpenApiBinaryResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<DownloadFileRequestUriParams> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(DownloadFileRequestUriParams.class));
+       final TypeAdapter<OpenApiBinaryResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(OpenApiBinaryResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<DownloadFileRequestUriParams>() {
+       return (TypeAdapter<T>) new TypeAdapter<OpenApiBinaryResponse>() {
            @Override
-           public void write(JsonWriter out, DownloadFileRequestUriParams value) throws IOException {
+           public void write(JsonWriter out, OpenApiBinaryResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public DownloadFileRequestUriParams read(JsonReader in) throws IOException {
+           public OpenApiBinaryResponse read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -191,18 +189,18 @@ public class DownloadFileRequestUriParams {
   }
 
   /**
-   * Create an instance of DownloadFileRequestUriParams given an JSON string
+   * Create an instance of OpenApiBinaryResponse given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DownloadFileRequestUriParams
-   * @throws IOException if the JSON string is invalid with respect to DownloadFileRequestUriParams
+   * @return An instance of OpenApiBinaryResponse
+   * @throws IOException if the JSON string is invalid with respect to OpenApiBinaryResponse
    */
-  public static DownloadFileRequestUriParams fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DownloadFileRequestUriParams.class);
+  public static OpenApiBinaryResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, OpenApiBinaryResponse.class);
   }
 
   /**
-   * Convert an instance of DownloadFileRequestUriParams to an JSON string
+   * Convert an instance of OpenApiBinaryResponse to an JSON string
    *
    * @return JSON string
    */

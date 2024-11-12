@@ -302,7 +302,7 @@ paths:
           content:
             application/octet-stream:
               schema:
-                type: string
+                $ref: '#/components/schemas/upsert_request'
           description: Download file
       security:
       - bearerAuth: []
@@ -418,6 +418,13 @@ components:
       - originalFilename
       - publicResource
       - size
+    OpenApiBinaryResponse:
+      properties:
+        file_bytes:
+          format: binary
+          type: string
+      required:
+      - file_bytes
     RenderRequest:
       example:
         fileName: fileName

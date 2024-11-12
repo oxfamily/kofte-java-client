@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * UpsertRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-12T13:05:32.255619073+01:00[Europe/Brussels]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-12T13:09:32.964459314+01:00[Europe/Brussels]", comments = "Generator version: 7.9.0")
 public class UpsertRequest {
   public static final String SERIALIZED_NAME_FILE_BYTES = "file_bytes";
   @SerializedName(SERIALIZED_NAME_FILE_BYTES)
