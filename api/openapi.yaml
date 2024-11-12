@@ -300,16 +300,16 @@ paths:
       responses:
         "200":
           content:
-            application/json:
+            application/octet-stream:
               schema:
-                $ref: '#/components/schemas/upsert_request'
+                type: string
           description: Download file
       security:
       - bearerAuth: []
       tags:
       - upload::routes
       x-accepts:
-      - application/json
+      - application/octet-stream
   /api/v1/upload/metadata:
     get:
       operationId: metadata
@@ -509,8 +509,6 @@ components:
           nullable: true
           type: boolean
     upsert_request:
-      example:
-        file_bytes: ""
       properties:
         file_bytes:
           format: binary
