@@ -205,7 +205,8 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/OpenApiBinaryResponse'
+                format: binary
+                type: string
           description: Render template
       security:
       - bearerAuth: []
@@ -298,7 +299,8 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/OpenApiBinaryResponse'
+                format: binary
+                type: string
           description: Download file
       security:
       - bearerAuth: []
@@ -415,8 +417,6 @@ components:
       - publicResource
       - size
     OpenApiBinaryResponse:
-      example:
-        file_bytes: ""
       properties:
         file_bytes:
           format: binary

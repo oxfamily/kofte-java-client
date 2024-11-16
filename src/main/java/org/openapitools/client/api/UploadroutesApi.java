@@ -29,7 +29,6 @@ import java.io.IOException;
 
 import java.io.File;
 import org.openapitools.client.model.FileUpload;
-import org.openapitools.client.model.OpenApiBinaryResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -267,7 +266,7 @@ public class UploadroutesApi {
      * 
      * 
      * @param id  (required)
-     * @return OpenApiBinaryResponse
+     * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -275,8 +274,8 @@ public class UploadroutesApi {
         <tr><td> 200 </td><td> Download file </td><td>  -  </td></tr>
      </table>
      */
-    public OpenApiBinaryResponse download(String id) throws ApiException {
-        ApiResponse<OpenApiBinaryResponse> localVarResp = downloadWithHttpInfo(id);
+    public File download(String id) throws ApiException {
+        ApiResponse<File> localVarResp = downloadWithHttpInfo(id);
         return localVarResp.getData();
     }
 
@@ -284,7 +283,7 @@ public class UploadroutesApi {
      * 
      * 
      * @param id  (required)
-     * @return ApiResponse&lt;OpenApiBinaryResponse&gt;
+     * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -292,9 +291,9 @@ public class UploadroutesApi {
         <tr><td> 200 </td><td> Download file </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OpenApiBinaryResponse> downloadWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<File> downloadWithHttpInfo(String id) throws ApiException {
         okhttp3.Call localVarCall = downloadValidateBeforeCall(id, null);
-        Type localVarReturnType = new TypeToken<OpenApiBinaryResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<File>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -311,10 +310,10 @@ public class UploadroutesApi {
         <tr><td> 200 </td><td> Download file </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call downloadAsync(String id, final ApiCallback<OpenApiBinaryResponse> _callback) throws ApiException {
+    public okhttp3.Call downloadAsync(String id, final ApiCallback<File> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = downloadValidateBeforeCall(id, _callback);
-        Type localVarReturnType = new TypeToken<OpenApiBinaryResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<File>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

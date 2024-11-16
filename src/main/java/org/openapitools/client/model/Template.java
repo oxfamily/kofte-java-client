@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * Template
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-16T19:46:46.523141013+01:00[Europe/Brussels]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-16T20:18:10.365988531+01:00[Europe/Brussels]", comments = "Generator version: 7.9.0")
 public class Template {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
