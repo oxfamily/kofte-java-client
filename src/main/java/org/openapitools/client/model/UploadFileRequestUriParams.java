@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * UploadFileRequestUriParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-12T13:18:35.820933602+01:00[Europe/Brussels]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-16T12:38:15.792656196+01:00[Europe/Brussels]", comments = "Generator version: 7.9.0")
 public class UploadFileRequestUriParams {
   public static final String SERIALIZED_NAME_CORRELATION_ID = "correlation_id";
   @SerializedName(SERIALIZED_NAME_CORRELATION_ID)
