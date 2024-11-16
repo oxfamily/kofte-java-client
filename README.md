@@ -2,7 +2,7 @@
 
 Köfte
 - API version: 0.3
-  - Build date: 2024-11-16T13:38:38.144521505+01:00[Europe/Brussels]
+  - Build date: 2024-11-16T13:56:57.888007553+01:00[Europe/Brussels]
   - Generator version: 7.9.0
 
 Köfte Api V1

@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * OpenApiBinaryResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-16T13:38:38.144521505+01:00[Europe/Brussels]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-16T13:56:57.888007553+01:00[Europe/Brussels]", comments = "Generator version: 7.9.0")
 public class OpenApiBinaryResponse {
   public static final String SERIALIZED_NAME_FILE_BYTES = "file_bytes";
   @SerializedName(SERIALIZED_NAME_FILE_BYTES)
