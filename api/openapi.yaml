@@ -4,7 +4,7 @@ info:
   license:
     name: ""
   title: Köfte
-  version: "0.3"
+  version: "0.5"
 servers:
 - url: /
 paths:
@@ -203,7 +203,7 @@ paths:
       responses:
         "200":
           content:
-            application/octet-stream:
+            '*/*':
               schema:
                 $ref: '#/components/schemas/OpenApiBinaryResponse'
           description: Render template
@@ -213,7 +213,7 @@ paths:
       - template::routes
       x-content-type: application/json
       x-accepts:
-      - application/octet-stream
+      - '*/*'
   /api/v1/template/{id}:
     delete:
       operationId: delete_templ_by_id
@@ -296,7 +296,7 @@ paths:
       responses:
         "200":
           content:
-            application/octet-stream:
+            '*/*':
               schema:
                 $ref: '#/components/schemas/OpenApiBinaryResponse'
           description: Download file
@@ -305,7 +305,7 @@ paths:
       tags:
       - upload::routes
       x-accepts:
-      - application/octet-stream
+      - '*/*'
   /api/v1/upload/metadata:
     get:
       operationId: metadata
@@ -415,6 +415,8 @@ components:
       - publicResource
       - size
     OpenApiBinaryResponse:
+      example:
+        file_bytes: ""
       properties:
         file_bytes:
           format: binary

@@ -132,7 +132,7 @@ public class Example {
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
