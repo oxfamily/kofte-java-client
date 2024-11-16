@@ -1,8 +1,8 @@
 # openapi-java-client
 
 Köfte
-- API version: 0.2
-  - Build date: 2024-11-16T12:38:15.792656196+01:00[Europe/Brussels]
+- API version: 0.3
+  - Build date: 2024-11-16T13:38:38.144521505+01:00[Europe/Brussels]
   - Generator version: 7.9.0
 
 Köfte Api V1
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>org.openapitools</groupId>
   <artifactId>openapi-java-client</artifactId>
-  <version>0.2</version>
+  <version>0.3</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "org.openapitools:openapi-java-client:0.2"
+     implementation "org.openapitools:openapi-java-client:0.3"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/openapi-java-client-0.2.jar`
+* `target/openapi-java-client-0.3.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
