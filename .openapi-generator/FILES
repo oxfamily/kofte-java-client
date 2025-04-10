@@ -8,7 +8,6 @@ build.sbt
 docs/Context.md
 docs/DownloadFileRequestUriParams.md
 docs/FileUpload.md
-docs/OpenApiBinaryResponse.md
 docs/RenderRequest.md
 docs/Template.md
 docs/TemplateType.md
@@ -48,7 +47,6 @@ src/main/java/org/openapitools/client/model/AbstractOpenApiSchema.java
 src/main/java/org/openapitools/client/model/Context.java
 src/main/java/org/openapitools/client/model/DownloadFileRequestUriParams.java
 src/main/java/org/openapitools/client/model/FileUpload.java
-src/main/java/org/openapitools/client/model/OpenApiBinaryResponse.java
 src/main/java/org/openapitools/client/model/RenderRequest.java
 src/main/java/org/openapitools/client/model/Template.java
 src/main/java/org/openapitools/client/model/TemplateType.java

@@ -2,7 +2,7 @@
 
 Köfte
 - API version: 0.5
-  - Build date: 2024-11-16T20:18:10.365988531+01:00[Europe/Brussels]
+  - Build date: 2025-04-10T21:55:04.171965557+02:00[Europe/Brussels]
   - Generator version: 7.9.0
 
 Köfte Api V1
@@ -129,6 +129,7 @@ Class | Method | HTTP request | Description
 *TemplateroutesApi* | [**upsert**](docs/TemplateroutesApi.md#upsert) | **POST** /api/v1/template | 
 *UploadroutesApi* | [**deleteById**](docs/UploadroutesApi.md#deleteById) | **DELETE** /api/v1/upload/{id} | 
 *UploadroutesApi* | [**download**](docs/UploadroutesApi.md#download) | **GET** /api/v1/upload/download | 
+*UploadroutesApi* | [**findAllUploads**](docs/UploadroutesApi.md#findAllUploads) | **GET** /api/v1/upload/find-all | 
 *UploadroutesApi* | [**metadata**](docs/UploadroutesApi.md#metadata) | **GET** /api/v1/upload/metadata | 
 *UploadroutesApi* | [**upload**](docs/UploadroutesApi.md#upload) | **POST** /api/v1/upload | 
 
@@ -138,7 +139,6 @@ Class | Method | HTTP request | Description
  - [Context](docs/Context.md)
  - [DownloadFileRequestUriParams](docs/DownloadFileRequestUriParams.md)
  - [FileUpload](docs/FileUpload.md)
- - [OpenApiBinaryResponse](docs/OpenApiBinaryResponse.md)
  - [RenderRequest](docs/RenderRequest.md)
  - [Template](docs/Template.md)
  - [TemplateType](docs/TemplateType.md)

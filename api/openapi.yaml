@@ -308,6 +308,24 @@ paths:
       - upload::routes
       x-accepts:
       - '*/*'
+  /api/v1/upload/find-all:
+    get:
+      operationId: find_all_uploads
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/FileUpload'
+                type: array
+          description: Find all upload
+      security:
+      - bearerAuth: []
+      tags:
+      - upload::routes
+      x-accepts:
+      - application/json
   /api/v1/upload/metadata:
     get:
       operationId: metadata
@@ -417,12 +435,8 @@ components:
       - publicResource
       - size
     OpenApiBinaryResponse:
-      properties:
-        file_bytes:
-          format: binary
-          type: string
-      required:
-      - file_bytes
+      format: binary
+      type: string
     RenderRequest:
       example:
         fileName: fileName
