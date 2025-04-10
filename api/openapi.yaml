@@ -4,7 +4,7 @@ info:
   license:
     name: ""
   title: Köfte
-  version: "0.5"
+  version: "0.8"
 servers:
 - url: /
 paths:
