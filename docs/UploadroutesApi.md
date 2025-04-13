@@ -142,7 +142,7 @@ public class Example {
 
 <a id="findAllUploads"></a>
 # **findAllUploads**
-> List&lt;FileUpload&gt; findAllUploads()
+> List&lt;FileUpload&gt; findAllUploads(correlationId)
 
 
 
@@ -166,8 +166,9 @@ public class Example {
     bearerAuth.setBearerToken("BEARER TOKEN");
 
     UploadroutesApi apiInstance = new UploadroutesApi(defaultClient);
+    String correlationId = "correlationId_example"; // String | 
     try {
-      List<FileUpload> result = apiInstance.findAllUploads();
+      List<FileUpload> result = apiInstance.findAllUploads(correlationId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UploadroutesApi#findAllUploads");
@@ -181,7 +182,10 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **correlationId** | **String**|  | [optional] |
 
 ### Return type
 

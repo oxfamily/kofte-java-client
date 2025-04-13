@@ -1,8 +1,8 @@
 # openapi-java-client
 
 Köfte
-- API version: 0.8
-  - Build date: 2025-04-10T21:57:42.136320787+02:00[Europe/Brussels]
+- API version: 0.9
+  - Build date: 2025-04-13T11:46:42.455136684+02:00[Europe/Brussels]
   - Generator version: 7.9.0
 
 Köfte Api V1
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>org.openapitools</groupId>
   <artifactId>openapi-java-client</artifactId>
-  <version>0.8</version>
+  <version>0.9</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "org.openapitools:openapi-java-client:0.8"
+     implementation "org.openapitools:openapi-java-client:0.9"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/openapi-java-client-0.8.jar`
+* `target/openapi-java-client-0.9.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -139,6 +139,7 @@ Class | Method | HTTP request | Description
  - [Context](docs/Context.md)
  - [DownloadFileRequestUriParams](docs/DownloadFileRequestUriParams.md)
  - [FileUpload](docs/FileUpload.md)
+ - [FindAllQueryParams](docs/FindAllQueryParams.md)
  - [RenderRequest](docs/RenderRequest.md)
  - [Template](docs/Template.md)
  - [TemplateType](docs/TemplateType.md)

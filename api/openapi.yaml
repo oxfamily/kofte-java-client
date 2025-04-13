@@ -4,7 +4,7 @@ info:
   license:
     name: ""
   title: Köfte
-  version: "0.8"
+  version: "0.9"
 servers:
 - url: /
 paths:
@@ -311,6 +311,15 @@ paths:
   /api/v1/upload/find-all:
     get:
       operationId: find_all_uploads
+      parameters:
+      - explode: true
+        in: query
+        name: correlationId
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -434,6 +443,11 @@ components:
       - originalFilename
       - publicResource
       - size
+    FindAllQueryParams:
+      properties:
+        correlationId:
+          nullable: true
+          type: string
     OpenApiBinaryResponse:
       format: binary
       type: string
